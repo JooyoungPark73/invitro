@@ -51,7 +51,7 @@ server_exec() {
 	server_exec 'cd loader; kubectl apply -f config/prometh_kn.yaml'
 
 	#* Bind addresses of the control manager and scheduler to "0.0.0.0" so that prometheus can scrape them from any domains.
-	server_exec 'cd loader; sudo kubeadm upgrade apply --config config/kubeadm_init.yaml --ignore-preflight-errors all --force --v=7'
+	server_exec 'cd loader; sudo kubeadm upgrade node --config config/kubeadm_init.yaml --ignore-preflight-errors all --force --v=7'
 
 	sleep 5
 
